@@ -1,12 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
+    <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Pallet fragment"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_box_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:paddingVertical="9dp"
+                app:boxBackgroundColor="@color/text_input_background_color"
+                app:boxCornerRadiusBottomEnd="22dp"
+                app:boxCornerRadiusBottomStart="22dp"
+                app:boxCornerRadiusTopEnd="22dp"
+                app:boxCornerRadiusTopStart="22dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_box_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="-10dp"
+                    android:hint="@string/box_weight_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="9dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
+                    tools:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_tray_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:paddingVertical="9dp"
+                app:boxBackgroundColor="@color/text_input_background_color"
+                app:boxCornerRadiusBottomEnd="22dp"
+                app:boxCornerRadiusBottomStart="22dp"
+                app:boxCornerRadiusTopEnd="22dp"
+                app:boxCornerRadiusTopStart="22dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_tray_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="-10dp"
+                    android:hint="@string/tray_weight_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="9dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
+                    tools:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_gross_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:paddingVertical="9dp"
+                app:boxBackgroundColor="@color/text_input_background_color"
+                app:boxCornerRadiusBottomEnd="22dp"
+                app:boxCornerRadiusBottomStart="22dp"
+                app:boxCornerRadiusTopEnd="22dp"
+                app:boxCornerRadiusTopStart="22dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_gross_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="-10dp"
+                    android:hint="@string/gross_weight_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="9dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
+                    tools:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_box_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingVertical="9dp"
+                app:boxBackgroundColor="@color/text_input_background_color"
+                app:boxCornerRadiusBottomEnd="22dp"
+                app:boxCornerRadiusBottomStart="22dp"
+                app:boxCornerRadiusTopEnd="22dp"
+                app:boxCornerRadiusTopStart="22dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_box_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="-10dp"
+                    android:hint="@string/box_count_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="9dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
+                    tools:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_package_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingVertical="9dp"
+                app:boxBackgroundColor="@color/text_input_background_color"
+                app:boxCornerRadiusBottomEnd="22dp"
+                app:boxCornerRadiusBottomStart="22dp"
+                app:boxCornerRadiusTopEnd="22dp"
+                app:boxCornerRadiusTopStart="22dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_package_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="-10dp"
+                    android:hint="@string/package_weight"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="9dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
+                    tools:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+            android:id="@+id/button_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/calculate_button" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -3,4 +3,12 @@
 
     <string name="bottom_menu_pallet_title">Паллет</string>
     <string name="bottom_menu_pieces_counting_title">Количество</string>
+    <string name="box_count_hint">Кол-во коробок, шт.</string>
+    <string name="box_weight_hint">Вес одной коробки, кг.</string>
+    <string name="tray_weight_hint">Вес поддона, кг.</string>
+    <string name="gross_weight_hint">Брутто паллета, кг.</string>
+    <string name="calculate_button">Рассчитать</string>
+    <string name="package_weight_hint">Вес упаковки, кг.</string>
+    <string name="package_weight_edit_button">Изм.</string>
+    <string name="package_weight">Вес упаковки, кг.</string>
 </resources>

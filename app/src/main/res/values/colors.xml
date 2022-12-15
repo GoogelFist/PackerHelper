@@ -9,9 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="silver_chalice">#B0B0B0</color>
+    <color name="nobel">#B3B3B3</color>
+    <color name="wild_sand">#F5F5F5</color>
 
     <!--  tabs bottom menu  -->
     <color name="checked_item_color">@color/black</color>
     <color name="unchecked_item_color">@color/silver_chalice</color>
 
+    <color name="text_input_background_color">@color/wild_sand</color>
 </resources>

@@ -3,7 +3,25 @@
 
     <style name="Text" parent="TextAppearance.AppCompat" />
 
-<!--      MontserratSemiBold  -->
+    <!--  MontserratMedium  -->
+
+    <style name="Text.MontserratMedium">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="Text.MontserratMedium.14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.MontserratMedium.14.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.MontserratMedium.14.Nobel">
+        <item name="android:textColor">@color/nobel</item>
+    </style>
+
+    <!--      MontserratSemiBold  -->
 
     <style name="Text.MontserratSemiBold">
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
