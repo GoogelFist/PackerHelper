@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text" parent="TextAppearance.AppCompat" />
+
+<!--      MontserratSemiBold  -->
+
+    <style name="Text.MontserratSemiBold">
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+
+    <style name="Text.MontserratSemiBold.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Text.MontserratSemiBold.10.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

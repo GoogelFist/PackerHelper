@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_graph"
+        app:startDestination="@id/palletFragment2">
+    <fragment
+            android:id="@+id/palletFragment2"
+            android:name="com.github.googelfist.packerhelper.presentation.PalletFragment"
+            android:label="PalletFragment" />
+    <fragment
+            android:id="@+id/piecesCountingFragment2"
+            android:name="com.github.googelfist.packerhelper.presentation.PiecesCountingFragment"
+            android:label="PiecesCountingFragment" />
+    <fragment
+            android:id="@+id/tabsFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.TabsFragment"
+            android:label="TabsFragment" >
+        <action
+                android:id="@+id/action_tabsFragment_to_palletFragment2"
+                app:destination="@id/palletFragment2" />
+        <action
+                android:id="@+id/action_tabsFragment_to_piecesCountingFragment2"
+                app:destination="@id/piecesCountingFragment2" />
+    </fragment>
+</navigation>
