@@ -6,20 +6,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_box_weight"
                 style="@style/DefaultTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/box_weight_hint"
-                android:paddingVertical="9dp"
+                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -27,7 +28,6 @@
                     style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawablePadding="-10dp"
                     android:imeOptions="actionNext"
                     android:inputType="numberDecimal"
                     android:lines="1"
@@ -37,21 +37,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_tray_weight"
                 style="@style/DefaultTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/tray_weight_hint"
-                android:paddingVertical="9dp"
+                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -59,7 +58,6 @@
                     style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawablePadding="-10dp"
                     android:imeOptions="actionNext"
                     android:inputType="numberDecimal"
                     android:lines="1"
@@ -70,21 +68,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_gross_weight"
                 style="@style/DefaultTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/gross_weight_hint"
-                android:paddingVertical="9dp"
+                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -92,7 +89,6 @@
                     style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawablePadding="-10dp"
                     android:imeOptions="actionNext"
                     android:inputType="numberDecimal"
                     android:lines="1"
@@ -103,21 +99,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_box_count"
                 style="@style/DefaultTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/box_count_hint"
-                android:paddingVertical="9dp"
+                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -125,7 +120,6 @@
                     style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawablePadding="-10dp"
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:lines="1"
@@ -136,21 +130,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_package_weight"
                 style="@style/DefaultTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/package_weight"
-                android:paddingVertical="9dp"
+                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -169,19 +162,18 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
 
     <Button
             android:id="@+id/button_calculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
             android:text="@string/calculate_button" />
 
     <TextView
             android:id="@+id/tv_clear_weight"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
@@ -190,7 +182,7 @@
 
     <TextView
             android:id="@+id/tv_theoretical_gross"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"

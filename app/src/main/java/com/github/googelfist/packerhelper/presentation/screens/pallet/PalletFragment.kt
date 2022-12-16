@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -33,6 +34,12 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        observeViewModel()
+        configEditText()
+        setupButtons()
+    }
+
+    private fun observeViewModel() {
         viewModel.result.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is PalletState.Less -> setLessState(state)
@@ -45,7 +52,9 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                 }
             }
         }
+    }
 
+    private fun configEditText() {
         binding.textInputEditTextBoxWeight.doOnTextChanged { text, start, before, count ->
             val boxCount = if (text.toString().isEmpty() || !text.toString().first().isDigit()) {
                 DEFAULT_VALUE
@@ -55,15 +64,21 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
             viewModel.obtainEvent(PalletEvent.CalculateInitParams(boxCount.toFloat()))
         }
 
-        setupButtons()
+        binding.textInputEditTextPackageWeight.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                binding.textInputEditTextPackageWeight.clearFocus()
+                v.hideKeyboard()
+            }
+            false
+        }
+    }
+
+    private fun setupButtons() {
 
         binding.root.setOnClickListener {
             it.hideKeyboard()
             requireActivity().currentFocus?.clearFocus()
         }
-    }
-
-    private fun setupButtons() {
 
         binding.buttonCalculate.setOnClickListener {
 
@@ -90,7 +105,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                     )
                 )
 
-                it.hideKeyboard()
+                root.hideKeyboard()
                 requireActivity().currentFocus?.clearFocus()
             }
         }

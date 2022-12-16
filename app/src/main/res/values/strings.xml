@@ -13,9 +13,9 @@
     <string name="package_weight_edit_button">Изм.</string>
     <string name="package_weight">Вес упаковки, кг.</string>
 
-    <string name="clear_weight_message">Нетто: %1$.2f</string>
-    <string name="allow_message">Допуск нетто 1%% : %1$.2f</string>
-    <string name="theoretical_gross_message">Теор. брутто: %1$.2f</string>
+    <string name="clear_weight_message">Нетто: %1$.2f кг.</string>
+    <string name="allow_message">Допуск нетто 1%% : %1$.2f кг.</string>
+    <string name="theoretical_gross_message">Теор. брутто: %1$.2f кг.</string>
     <string name="less_real_gross_message">Фактич. брутто (%1$.2f кг.) меньше нижней границы допуска на %2$.2f кг.</string>
     <string name="correct_real_gross_message">Фактич. брутто (%1$.2f кг.) в границах допуска ( %2$.2f кг. )</string>
     <string name="more_real_gross_message">Фактич. брутто (%1$.2f кг.) больше верхней границы допуска на + %2$.2f кг.</string>
