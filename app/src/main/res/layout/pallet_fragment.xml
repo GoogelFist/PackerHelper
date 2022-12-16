@@ -14,38 +14,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_layout_box_weight"
-                android:layout_width="wrap_content"
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/box_weight_hint"
                 android:paddingVertical="9dp"
-                app:boxBackgroundColor="@color/text_input_background_color"
-                app:boxCornerRadiusBottomEnd="22dp"
-                app:boxCornerRadiusBottomStart="22dp"
-                app:boxCornerRadiusTopEnd="22dp"
-                app:boxCornerRadiusTopStart="22dp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconMode="clear_text"
-                app:hintEnabled="false"
-                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+                app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_input_edit_text_box_weight"
+                    style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="-10dp"
-                    android:hint="@string/box_weight_hint"
                     android:imeOptions="actionNext"
                     android:inputType="numberDecimal"
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="9dp"
-                    android:singleLine="true"
-                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
-                    tools:text="" />
+                    android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,37 +46,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_layout_tray_weight"
-                android:layout_width="wrap_content"
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/tray_weight_hint"
                 android:paddingVertical="9dp"
-                app:boxBackgroundColor="@color/text_input_background_color"
-                app:boxCornerRadiusBottomEnd="22dp"
-                app:boxCornerRadiusBottomStart="22dp"
-                app:boxCornerRadiusTopEnd="22dp"
-                app:boxCornerRadiusTopStart="22dp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconMode="clear_text"
-                app:hintEnabled="false"
-                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+                app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_input_edit_text_tray_weight"
+                    style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="-10dp"
-                    android:hint="@string/tray_weight_hint"
                     android:imeOptions="actionNext"
                     android:inputType="numberDecimal"
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="9dp"
                     android:singleLine="true"
-                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
                     tools:text="" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -102,37 +79,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_layout_gross_weight"
-                android:layout_width="wrap_content"
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/gross_weight_hint"
                 android:paddingVertical="9dp"
-                app:boxBackgroundColor="@color/text_input_background_color"
-                app:boxCornerRadiusBottomEnd="22dp"
-                app:boxCornerRadiusBottomStart="22dp"
-                app:boxCornerRadiusTopEnd="22dp"
-                app:boxCornerRadiusTopStart="22dp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconMode="clear_text"
-                app:hintEnabled="false"
-                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+                app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_input_edit_text_gross_weight"
+                    style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="-10dp"
-                    android:hint="@string/gross_weight_hint"
                     android:imeOptions="actionNext"
                     android:inputType="numberDecimal"
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="9dp"
                     android:singleLine="true"
-                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
                     tools:text="" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -146,36 +112,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_layout_box_count"
-                android:layout_width="wrap_content"
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/box_count_hint"
                 android:paddingVertical="9dp"
-                app:boxBackgroundColor="@color/text_input_background_color"
-                app:boxCornerRadiusBottomEnd="22dp"
-                app:boxCornerRadiusBottomStart="22dp"
-                app:boxCornerRadiusTopEnd="22dp"
-                app:boxCornerRadiusTopStart="22dp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconMode="clear_text"
-                app:hintEnabled="false"
-                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+                app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_input_edit_text_box_count"
+                    style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="-10dp"
-                    android:hint="@string/box_count_hint"
                     android:imeOptions="actionNext"
                     android:inputType="number"
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="9dp"
                     android:singleLine="true"
-                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
                     tools:text="" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -189,36 +145,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_layout_package_weight"
-                android:layout_width="wrap_content"
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/package_weight"
                 android:paddingVertical="9dp"
-                app:boxBackgroundColor="@color/text_input_background_color"
-                app:boxCornerRadiusBottomEnd="22dp"
-                app:boxCornerRadiusBottomStart="22dp"
-                app:boxCornerRadiusTopEnd="22dp"
-                app:boxCornerRadiusTopStart="22dp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconMode="clear_text"
-                app:hintEnabled="false"
-                app:hintTextAppearance="@style/Text.MontserratMedium.14.Nobel">
+                app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_input_edit_text_package_weight"
+                    style="@style/DefaultTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="-10dp"
-                    android:hint="@string/package_weight"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionDone"
                     android:inputType="number"
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="9dp"
                     android:singleLine="true"
-                    android:textAppearance="@style/Text.MontserratMedium.14.Black"
                     tools:text="" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -231,8 +177,42 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:text="@string/calculate_button" />
+
+    <TextView
+            android:id="@+id/tv_clear_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            tools:text="Нетто" />
+
+    <TextView
+            android:id="@+id/tv_theoretical_gross"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            tools:text="Теор. брутто" />
+
+    <TextView
+            android:id="@+id/tv_allow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            tools:text="Допуск" />
+
+    <TextView
+            android:id="@+id/tv_real_gross"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            tools:text="Факт. брутто" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,7 +5,7 @@
         app:startDestination="@id/palletFragment2">
     <fragment
             android:id="@+id/palletFragment2"
-            android:name="com.github.googelfist.packerhelper.presentation.PalletFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.pallet.PalletFragment"
             android:label="PalletFragment" />
     <fragment
             android:id="@+id/piecesCountingFragment2"

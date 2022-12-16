@@ -7,7 +7,7 @@
 
     <fragment
             android:id="@+id/palletFragment"
-            android:name="com.github.googelfist.packerhelper.presentation.PalletFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.pallet.PalletFragment"
             android:label="main_tab_fragment"
             tools:layout="@layout/pallet_fragment" />
 

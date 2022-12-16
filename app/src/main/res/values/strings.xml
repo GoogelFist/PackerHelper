@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Packer Helper</string>
 
     <string name="bottom_menu_pallet_title">Паллет</string>
@@ -6,9 +7,17 @@
     <string name="box_count_hint">Кол-во коробок, шт.</string>
     <string name="box_weight_hint">Вес одной коробки, кг.</string>
     <string name="tray_weight_hint">Вес поддона, кг.</string>
-    <string name="gross_weight_hint">Брутто паллета, кг.</string>
+    <string name="gross_weight_hint">Фактич. брутто паллета, кг.</string>
     <string name="calculate_button">Рассчитать</string>
     <string name="package_weight_hint">Вес упаковки, кг.</string>
     <string name="package_weight_edit_button">Изм.</string>
     <string name="package_weight">Вес упаковки, кг.</string>
+
+    <string name="clear_weight_message">Нетто: %1$.2f</string>
+    <string name="allow_message">Допуск нетто 1%% : %1$.2f</string>
+    <string name="theoretical_gross_message">Теор. брутто: %1$.2f</string>
+    <string name="less_real_gross_message">Фактич. брутто (%1$.2f кг.) меньше нижней границы допуска на %2$.2f кг.</string>
+    <string name="correct_real_gross_message">Фактич. брутто (%1$.2f кг.) в границах допуска ( %2$.2f кг. )</string>
+    <string name="more_real_gross_message">Фактич. брутто (%1$.2f кг.) больше верхней границы допуска на + %2$.2f кг.</string>
+
 </resources>

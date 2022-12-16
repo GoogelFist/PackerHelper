@@ -8,13 +8,25 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+    <color name="torch_red">#FF002E</color>
+    <color name="coral_red">#FF4545</color>
+    <color name="alabaster">#FBFBFB</color>
+    <color name="alto">#DFDFDF</color>
     <color name="silver_chalice">#B0B0B0</color>
     <color name="nobel">#B3B3B3</color>
     <color name="wild_sand">#F5F5F5</color>
+
+    <color name="edit_text_box_background_color">@color/alabaster</color>
+    <color name="edit_text_hint_color">@color/silver_chalice</color>
+    <color name="edit_text_error_text_color">@color/torch_red</color>
 
     <!--  tabs bottom menu  -->
     <color name="checked_item_color">@color/black</color>
     <color name="unchecked_item_color">@color/silver_chalice</color>
 
     <color name="text_input_background_color">@color/wild_sand</color>
+
+    <color name="bottom_stroke_focused_color">@color/alto</color>
+    <color name="bottom_stroke_un_focused_color">@color/alto</color>
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/text_input_background_color</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="boxCollapsedPaddingTop">8dp</item>
+        <item name="boxStrokeErrorColor">@color/edit_text_error_text_color</item>
+        <item name="boxStrokeColor">@color/box_stroke_color_selector</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="hintTextAppearance">@style/Text.MontserratMedium.12</item>
+        <item name="hintTextColor">@color/edit_text_hint_color</item>
+        <item name="android:textColorHint">@color/edit_text_hint_color</item>
+        <item name="errorEnabled">false</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextColor">@color/edit_text_error_text_color</item>
+        <item name="errorTextAppearance">@style/Text.MontserratRegular.12</item>
+    </style>
+
+    <style name="DefaultTextInputEditText">
+        <item name="android:textAppearance">@style/Text.MontserratMedium.16.Black</item>
+    </style>
+
+</resources>
