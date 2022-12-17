@@ -9,6 +9,7 @@
     <string name="tray_weight_hint">Вес поддона, кг.</string>
     <string name="gross_weight_hint">Фактич. брутто паллета, кг.</string>
     <string name="calculate_button">Рассчитать</string>
+    <string name="clear_button">Очистить</string>
     <string name="package_weight_hint">Вес упаковки, кг.</string>
     <string name="package_weight_edit_button">Изм.</string>
     <string name="package_weight">Вес упаковки, кг.</string>

@@ -164,12 +164,27 @@
 
     </FrameLayout>
 
-    <Button
-            android:id="@+id/button_calculate"
+    <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="@string/calculate_button" />
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/button_calculate"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/calculate_button" />
+
+        <Button
+                android:id="@+id/button_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/clear_button" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
             android:id="@+id/tv_theoretical_gross"
