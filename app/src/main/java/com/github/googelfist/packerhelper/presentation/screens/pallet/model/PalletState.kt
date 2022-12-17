@@ -25,6 +25,9 @@ sealed class PalletState {
         val diff: Float
     ) : PalletState()
 
-    data class InitState(val boxCount: Int = 0, val packageWeight: Float = 0f) : PalletState()
-    object None : PalletState()
+    data class InitState(
+        val boxWeight: Float = 0f,
+        val boxCount: Int = 0,
+        val packageWeight: Float = 0f
+    ) : PalletState()
 }

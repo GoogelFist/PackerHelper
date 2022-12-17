@@ -2,21 +2,39 @@ package com.github.googelfist.packerhelper.presentation.screens.pallet
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.github.googelfist.packerhelper.domain.LoadPalletUseCase
+import com.github.googelfist.packerhelper.domain.SavePackageWeightUseCase
 import com.github.googelfist.packerhelper.presentation.screens.EventHandler
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.PalletEvent
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.PalletState
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class PalletViewModel : ViewModel(), EventHandler<PalletEvent> {
+class PalletViewModel(
+    private val savePackageWeightUseCase: SavePackageWeightUseCase,
+    private val loadPalletUseCase: LoadPalletUseCase
+) : ViewModel(), EventHandler<PalletEvent> {
 
     private val _result = MutableLiveData<PalletState>()
     val result = _result
 
     override fun obtainEvent(event: PalletEvent) {
         when (event) {
+            is PalletEvent.LoadPallet -> loadedPallet(event.boxWeight)
             is PalletEvent.CalculateRealGross -> calculated(event)
-            is PalletEvent.CalculateInitParams -> calculatedInitParams(event)
+        }
+    }
+
+    private fun loadedPallet(boxWeight: Float) {
+        viewModelScope.launch {
+            val pallet = loadPalletUseCase(boxWeight)
+            _result.value = PalletState.InitState(
+                boxWeight = pallet.boxWeight,
+                boxCount = pallet.boxCount,
+                packageWeight = pallet.packageWeight
+            )
         }
     }
 
@@ -35,35 +53,47 @@ class PalletViewModel : ViewModel(), EventHandler<PalletEvent> {
             val isLess = event.grossWeight < lowerBorderGross
             val isMore = event.grossWeight > highestBorderGross
 
+            savePackageWeightUseCase(boxCount = event.boxCount, packageWeight = event.packageWeight)
+
             _result.value = when {
-                isCorrect -> PalletState.Correct(clearWeight, theoreticalGross, allow, realGross, event.grossWeight - theoreticalGross)
-                isLess -> PalletState.Less(clearWeight, theoreticalGross, allow, realGross, event.grossWeight - lowerBorderGross)
-                isMore -> PalletState.More(clearWeight, theoreticalGross, allow, realGross, event.grossWeight - highestBorderGross)
-                else -> PalletState.None
+                isCorrect -> PalletState.Correct(
+                    clearWeight = clearWeight,
+                    theoreticalGross = theoreticalGross,
+                    allow = allow,
+                    realGross = realGross,
+                    diff = event.grossWeight - theoreticalGross
+                )
+                isLess -> PalletState.Less(
+                    clearWeight = clearWeight,
+                    theoreticalGross = theoreticalGross,
+                    allow = allow,
+                    realGross = realGross,
+                    diff = event.grossWeight - lowerBorderGross
+                )
+                isMore -> PalletState.More(
+                    clearWeight = clearWeight,
+                    theoreticalGross = theoreticalGross,
+                    allow = allow,
+                    realGross = realGross,
+                    diff = event.grossWeight - highestBorderGross
+                )
+                else -> PalletState.InitState()
             }
         }
     }
+}
 
-    private fun calculatedInitParams(event: PalletEvent.CalculateInitParams) {
-        val boxCount = when {
-            event.boxWeight == 0f -> 0
-            event.boxWeight <= 16f -> 60
-            event.boxWeight > 16f && event.boxWeight < 19 -> 48
-            event.boxWeight >= 19f -> 36
-            else -> 0
+class PalletViewModelFactory @Inject constructor(
+    private val savePackageWeightUseCase: SavePackageWeightUseCase,
+    private val loadPalletUseCase: LoadPalletUseCase
+) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(PalletViewModel::class.java)) {
+            return PalletViewModel(
+                savePackageWeightUseCase = savePackageWeightUseCase,
+                loadPalletUseCase = loadPalletUseCase
+            ) as T
         }
-        val packageWeight = when (boxCount) {
-            36 -> PACKAGE_WEIGHT_36
-            48 -> PACKAGE_WEIGHT_48
-            60 -> PACKAGE_WEIGHT_60
-            else -> 0f
-        }
-        _result.value = PalletState.InitState(boxCount = boxCount, packageWeight = packageWeight)
-    }
-
-    companion object {
-        private const val PACKAGE_WEIGHT_36 = 13f
-        private const val PACKAGE_WEIGHT_48 = 17f
-        private const val PACKAGE_WEIGHT_60 = 21f
+        throw IllegalArgumentException("Unknown class name")
     }
 }

@@ -1,5 +1,6 @@
 package com.github.googelfist.packerhelper.presentation.screens.pallet
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +11,13 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.github.googelfist.packerhelper.R
+import com.github.googelfist.packerhelper.component
 import com.github.googelfist.packerhelper.databinding.PalletFragmentBinding
 import com.github.googelfist.packerhelper.presentation.screens.InputTextHelper.hideKeyboard
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.PalletEvent
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.PalletState
 import com.google.android.material.textfield.TextInputEditText
+import javax.inject.Inject
 
 class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
@@ -22,7 +25,15 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
     private val binding: PalletFragmentBinding
         get() = _binding!!
 
-    private val viewModel by activityViewModels<PalletViewModel>()
+    @Inject
+    lateinit var palletViewModelFactory: PalletViewModelFactory
+
+    private val viewModel by activityViewModels<PalletViewModel> { palletViewModelFactory }
+
+    override fun onAttach(context: Context) {
+        context.component.inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -45,7 +56,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                 is PalletState.Less -> setLessState(state)
                 is PalletState.Correct -> setCorrectState(state)
                 is PalletState.More -> setMoreState(state)
-                PalletState.None -> {}
                 is PalletState.InitState -> {
                     binding.textInputEditTextBoxCount.setText(state.boxCount.toString())
                     binding.textInputEditTextPackageWeight.setText(state.packageWeight.toString())
@@ -55,13 +65,14 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
     }
 
     private fun configEditText() {
+
         binding.textInputEditTextBoxWeight.doOnTextChanged { text, start, before, count ->
-            val boxCount = if (text.toString().isEmpty() || !text.toString().first().isDigit()) {
+            val boxWeight = if (text.toString().isEmpty() || !text.toString().first().isDigit()) {
                 DEFAULT_VALUE
             } else {
                 text.toString()
             }
-            viewModel.obtainEvent(PalletEvent.CalculateInitParams(boxCount.toFloat()))
+            viewModel.obtainEvent(PalletEvent.LoadPallet(boxWeight.toFloat()))
         }
 
         binding.textInputEditTextPackageWeight.setOnEditorActionListener { v, actionId, event ->
@@ -128,7 +139,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
             tvRealGross.setTextColor(Color.RED)
         }
-
     }
 
     private fun setCorrectState(state: PalletState.Correct) {
@@ -140,7 +150,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
             tvRealGross.text =
                 getString(R.string.correct_real_gross_message, state.realGross, state.diff)
 
-            tvRealGross.setTextColor(Color.GREEN)
+            tvRealGross.setTextColor(Color.BLUE)
         }
     }
 

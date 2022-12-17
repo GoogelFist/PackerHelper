@@ -9,5 +9,5 @@ sealed class PalletEvent {
         val packageWeight: Float = 0f
     ) : PalletEvent()
 
-    data class CalculateInitParams(val boxWeight: Float = 0f) : PalletEvent()
+    data class LoadPallet(val boxWeight: Float = 0f) : PalletEvent()
 }
