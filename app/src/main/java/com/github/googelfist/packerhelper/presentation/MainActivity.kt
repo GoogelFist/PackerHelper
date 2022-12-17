@@ -9,7 +9,6 @@ import com.github.googelfist.packerhelper.R
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
