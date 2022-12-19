@@ -88,7 +88,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun setLessState(state: PalletState.Less) {
         with(binding) {
-            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
+            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
             tvTheoreticalGross.text =
                 getString(
                     R.string.theoretical_gross_message,
@@ -96,7 +96,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                     state.limit.minGrossLimit,
                     state.limit.maxGrossLimit
                 )
-            tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
                 getString(
                     R.string.less_real_gross_message,
@@ -111,7 +110,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun setCorrectState(state: PalletState.Correct) {
         with(binding) {
-            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
+            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
             tvTheoreticalGross.text =
                 getString(
                     R.string.theoretical_gross_message,
@@ -119,7 +118,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                     state.limit.minGrossLimit,
                     state.limit.maxGrossLimit
                 )
-            tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
                 getString(R.string.correct_real_gross_message, state.realGross, state.diff)
 
@@ -129,7 +127,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun setMoreState(state: PalletState.More) {
         with(binding) {
-            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
+            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
             tvTheoreticalGross.text =
                 getString(
                     R.string.theoretical_gross_message,
@@ -137,7 +135,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                     state.limit.minGrossLimit,
                     state.limit.maxGrossLimit
                 )
-            tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
                 getString(
                     R.string.more_real_gross_message,
@@ -194,7 +191,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
                 tvTheoreticalGross.text = EMPTY_STRING
                 tvClearWeight.text = EMPTY_STRING
-                tvLimit.text = EMPTY_STRING
                 tvRealGross.text = EMPTY_STRING
             }
         }
