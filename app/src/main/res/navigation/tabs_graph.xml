@@ -5,5 +5,5 @@
         app:startDestination="@id/pallet_tab">
 
     <include app:graph="@navigation/pallet_tab" />
-    <include app:graph="@navigation/pieces_counting_tab" />
+    <include app:graph="@navigation/pieces_tabs" />
 </navigation>

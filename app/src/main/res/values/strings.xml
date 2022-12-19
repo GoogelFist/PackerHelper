@@ -20,5 +20,7 @@
     <string name="less_real_gross_message">Фактич. брутто (%1$.2f кг.) меньше нижней границы допуска (%2$.2f кг.) на %3$.2f кг.</string>
     <string name="correct_real_gross_message">Фактич. брутто (%1$.2f кг.) в границах допуска ( %2$.2f кг. )</string>
     <string name="more_real_gross_message">Фактич. брутто (%1$.2f кг.) больше верхней границы допуска (%2$.2f кг.) на + %3$.2f кг.</string>
+    <string name="tab_item_pieces">Штуки по весу</string>
+    <string name="tab_item_weight">Вес по штукам</string>
 
 </resources>

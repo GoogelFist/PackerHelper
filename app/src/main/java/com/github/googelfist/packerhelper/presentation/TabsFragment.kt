@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.github.googelfist.packerhelper.R
-import com.github.googelfist.packerhelper.databinding.TabsFragmentBinding
+import com.github.googelfist.packerhelper.databinding.MainTabsFragmentBinding
 
 class TabsFragment : Fragment() {
 
-    private var _binding: TabsFragmentBinding? = null
-    private val binding: TabsFragmentBinding
+    private var _binding: MainTabsFragmentBinding? = null
+    private val binding: MainTabsFragmentBinding
         get() = _binding!!
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class TabsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = TabsFragmentBinding.inflate(inflater, container, false)
+        _binding = MainTabsFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
