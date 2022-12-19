@@ -188,31 +188,31 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
-            android:id="@+id/tv_theoretical_gross"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:textAppearance="@style/Text.MontserratMedium.16.Black"
-            tools:text="Теор. брутто" />
-
-    <TextView
             android:id="@+id/tv_clear_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="8dp"
-            android:textAppearance="@style/Text.MontserratMedium.16.Black"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
             tools:text="Нетто" />
 
     <TextView
-            android:id="@+id/tv_allow"
+            android:id="@+id/tv_limit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
-            android:textAppearance="@style/Text.MontserratMedium.16.Black"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
             tools:text="Допуск" />
+
+    <TextView
+            android:id="@+id/tv_theoretical_gross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            tools:text="Теор. брутто" />
 
     <TextView
             android:id="@+id/tv_real_gross"

@@ -70,10 +70,10 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
         with(binding) {
             tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
             tvTheoreticalGross.text =
-                getString(R.string.theoretical_gross_message, state.theoreticalGross)
-            tvAllow.text = getString(R.string.allow_message, state.allow)
+                getString(R.string.theoretical_gross_message, state.theoreticalGross, state.limit.minGrossLimit, state.limit.maxGrossLimit)
+            tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
-                getString(R.string.less_real_gross_message, state.realGross, state.diff)
+                getString(R.string.less_real_gross_message, state.realGross, state.limit.minGrossLimit, state.diff)
 
             tvRealGross.setTextColor(Color.RED)
         }
@@ -83,8 +83,8 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
         with(binding) {
             tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
             tvTheoreticalGross.text =
-                getString(R.string.theoretical_gross_message, state.theoreticalGross)
-            tvAllow.text = getString(R.string.allow_message, state.allow)
+                getString(R.string.theoretical_gross_message, state.theoreticalGross, state.limit.minGrossLimit, state.limit.maxGrossLimit)
+            tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
                 getString(R.string.correct_real_gross_message, state.realGross, state.diff)
 
@@ -96,10 +96,10 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
         with(binding) {
             tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
             tvTheoreticalGross.text =
-                getString(R.string.theoretical_gross_message, state.theoreticalGross)
-            tvAllow.text = getString(R.string.allow_message, state.allow)
+                getString(R.string.theoretical_gross_message, state.theoreticalGross, state.limit.minGrossLimit, state.limit.maxGrossLimit)
+            tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
-                getString(R.string.more_real_gross_message, state.realGross, state.diff)
+                getString(R.string.more_real_gross_message, state.realGross, state.limit.maxGrossLimit, state.diff)
 
             tvRealGross.setTextColor(Color.RED)
         }
@@ -149,7 +149,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
                 tvTheoreticalGross.text = ""
                 tvClearWeight.text = ""
-                tvAllow.text = ""
+                tvLimit.text = ""
                 tvRealGross.text = ""
             }
         }

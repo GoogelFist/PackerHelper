@@ -4,7 +4,7 @@ sealed class PalletState {
     data class Less(
         val clearWeight: Float,
         val theoreticalGross: Float,
-        val allow: Float,
+        val limit: Limit,
         val realGross: Float,
         val diff: Float
     ) : PalletState()
@@ -12,7 +12,7 @@ sealed class PalletState {
     data class Correct(
         val clearWeight: Float,
         val theoreticalGross: Float,
-        val allow: Float,
+        val limit: Limit,
         val realGross: Float,
         val diff: Float
     ) : PalletState()
@@ -20,7 +20,7 @@ sealed class PalletState {
     data class More(
         val clearWeight: Float,
         val theoreticalGross: Float,
-        val allow: Float,
+        val limit: Limit,
         val realGross: Float,
         val diff: Float
     ) : PalletState()
@@ -31,3 +31,5 @@ sealed class PalletState {
         val packageWeight: Float = 0f
     ) : PalletState()
 }
+
+data class Limit(val value: Float, val minGrossLimit: Float, val maxGrossLimit: Float)
