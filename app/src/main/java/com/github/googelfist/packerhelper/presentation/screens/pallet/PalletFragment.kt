@@ -62,18 +62,48 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
     }
 
     private fun setInitState(state: PalletState.InitState) {
-        binding.textInputEditTextBoxCount.setText(state.boxCount.toString())
-        binding.textInputEditTextPackageWeight.setText(state.packageWeight.toString())
+        val boxCount = validateBoxCount(state.boxCount)
+        val packageWeight = validatePackageWeight(state.packageWeight)
+
+        binding.textInputEditTextBoxCount.setText(boxCount)
+        binding.textInputEditTextPackageWeight.setText(packageWeight)
     }
+
+    private fun validateBoxCount(boxCount: Int): String {
+       return if (boxCount == 0) {
+            EMPTY_STRING
+        } else {
+            boxCount.toString()
+        }
+    }
+
+    private fun validatePackageWeight(packageWeight: Float): String {
+        return if (packageWeight == 0f) {
+            EMPTY_STRING
+        } else {
+            packageWeight.toString()
+        }
+    }
+
 
     private fun setLessState(state: PalletState.Less) {
         with(binding) {
             tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
             tvTheoreticalGross.text =
-                getString(R.string.theoretical_gross_message, state.theoreticalGross, state.limit.minGrossLimit, state.limit.maxGrossLimit)
+                getString(
+                    R.string.theoretical_gross_message,
+                    state.theoreticalGross,
+                    state.limit.minGrossLimit,
+                    state.limit.maxGrossLimit
+                )
             tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
-                getString(R.string.less_real_gross_message, state.realGross, state.limit.minGrossLimit, state.diff)
+                getString(
+                    R.string.less_real_gross_message,
+                    state.realGross,
+                    state.limit.minGrossLimit,
+                    state.diff
+                )
 
             tvRealGross.setTextColor(Color.RED)
         }
@@ -83,7 +113,12 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
         with(binding) {
             tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
             tvTheoreticalGross.text =
-                getString(R.string.theoretical_gross_message, state.theoreticalGross, state.limit.minGrossLimit, state.limit.maxGrossLimit)
+                getString(
+                    R.string.theoretical_gross_message,
+                    state.theoreticalGross,
+                    state.limit.minGrossLimit,
+                    state.limit.maxGrossLimit
+                )
             tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
                 getString(R.string.correct_real_gross_message, state.realGross, state.diff)
@@ -96,10 +131,20 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
         with(binding) {
             tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight)
             tvTheoreticalGross.text =
-                getString(R.string.theoretical_gross_message, state.theoreticalGross, state.limit.minGrossLimit, state.limit.maxGrossLimit)
+                getString(
+                    R.string.theoretical_gross_message,
+                    state.theoreticalGross,
+                    state.limit.minGrossLimit,
+                    state.limit.maxGrossLimit
+                )
             tvLimit.text = getString(R.string.limit_message, state.limit.value)
             tvRealGross.text =
-                getString(R.string.more_real_gross_message, state.realGross, state.limit.maxGrossLimit, state.diff)
+                getString(
+                    R.string.more_real_gross_message,
+                    state.realGross,
+                    state.limit.maxGrossLimit,
+                    state.diff
+                )
 
             tvRealGross.setTextColor(Color.RED)
         }
@@ -141,16 +186,16 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
         with(binding) {
 
             buttonClear.setOnClickListener {
-                textInputEditTextBoxWeight.setText("")
-                textInputEditTextTrayWeight.setText("")
-                textInputEditTextGrossWeight.setText("")
-                textInputEditTextBoxCount.setText("")
-                textInputEditTextPackageWeight.setText("")
+                textInputEditTextBoxWeight.setText(EMPTY_STRING)
+                textInputEditTextTrayWeight.setText(EMPTY_STRING)
+                textInputEditTextGrossWeight.setText(EMPTY_STRING)
+                textInputEditTextBoxCount.setText(EMPTY_STRING)
+                textInputEditTextPackageWeight.setText(EMPTY_STRING)
 
-                tvTheoreticalGross.text = ""
-                tvClearWeight.text = ""
-                tvLimit.text = ""
-                tvRealGross.text = ""
+                tvTheoreticalGross.text = EMPTY_STRING
+                tvClearWeight.text = EMPTY_STRING
+                tvLimit.text = EMPTY_STRING
+                tvRealGross.text = EMPTY_STRING
             }
         }
     }
@@ -189,7 +234,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun validateEditText(editText: TextInputEditText) {
         if (editText.text.toString().isEmpty() || !editText.text.toString().first().isDigit()) {
-            editText.setText("0")
+            editText.setText(DEFAULT_VALUE)
         }
     }
 
@@ -200,5 +245,6 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     companion object {
         private const val DEFAULT_VALUE = "0"
+        private const val EMPTY_STRING = ""
     }
 }
