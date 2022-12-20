@@ -2,6 +2,8 @@
 
     <string name="app_name">Packer Helper</string>
 
+<!--  pallet  -->
+
     <string name="bottom_menu_pallet_title">Паллет</string>
     <string name="bottom_menu_pieces_counting_title">Кол-во по весу</string>
     <string name="bottom_menu_weight_counting_title">Вес по кол-ву</string>
@@ -23,4 +25,13 @@
     <string name="tab_item_pieces">Штуки по весу</string>
     <string name="tab_item_weight">Вес по штукам</string>
 
+<!--  pieces counting  -->
+    <string name="weight_box_hint">Вес одной коробки, кг.</string>
+    <string name="weight_100_pc_hint">Вес 100 штук, кг.</string>
+    <string name="pieces_counting">Коробка весом %1$.2f кг. содержит %2$d шт.</string>
+    <string name="et_starts_with_dot">0%1$s</string>
+
+<!--  weight counting  -->
+    <string name="pieces_box_hint">Количество штук в коробке, кг.</string>
+    <string name="weight_counting">Изделия в количестве %1$d шт. весят %2$.2f кг.</string>
 </resources>

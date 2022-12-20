@@ -1,13 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="pieces counting" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/weight_box_hint"
+                android:paddingVertical="4dp"
+                app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_box_weight"
+                    style="@style/DefaultTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+                style="@style/DefaultTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/weight_100_pc_hint"
+                android:paddingVertical="4dp"
+                app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_edit_text_100_pc_weight"
+                    style="@style/DefaultTextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:maxLength="255"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/button_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/clear_button" />
+
+        <Button
+                android:id="@+id/button_calculate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:text="@string/calculate_button" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+            android:id="@+id/tv_pcs_counting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/pieces_counting"
+            android:textAppearance="@style/Text.MontserratMedium.14.Black" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

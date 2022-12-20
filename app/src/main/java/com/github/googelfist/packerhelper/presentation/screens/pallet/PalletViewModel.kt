@@ -3,14 +3,12 @@ package com.github.googelfist.packerhelper.presentation.screens.pallet
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import com.github.googelfist.packerhelper.domain.LoadPalletUseCase
 import com.github.googelfist.packerhelper.domain.SavePackageWeightUseCase
 import com.github.googelfist.packerhelper.presentation.screens.EventHandler
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.Limit
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.PalletEvent
 import com.github.googelfist.packerhelper.presentation.screens.pallet.model.PalletState
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class PalletViewModel(
@@ -29,57 +27,54 @@ class PalletViewModel(
     }
 
     private fun loadedPallet(boxWeight: Float) {
-        viewModelScope.launch {
-            val pallet = loadPalletUseCase(boxWeight)
-            _result.value = PalletState.InitState(
-                boxWeight = pallet.boxWeight,
-                boxCount = pallet.boxCount,
-                packageWeight = pallet.packageWeight
-            )
-        }
+        val pallet = loadPalletUseCase(boxWeight)
+        _result.value = PalletState.InitState(
+            boxWeight = pallet.boxWeight,
+            boxCount = pallet.boxCount,
+            packageWeight = pallet.packageWeight
+        )
     }
 
     private fun calculated(event: PalletEvent.CalculateRealGross) {
-        viewModelScope.launch {
-            val clearWeight = event.boxWeight * event.boxCount
 
-            val theoreticalGross = clearWeight + event.packageWeight + event.trayWeight
-            val realGross = event.grossWeight
-            val limitValue = clearWeight / 100
+        val clearWeight = event.boxWeight * event.boxCount
 
-            val minGrossLimit = theoreticalGross - limitValue
-            val maxGrossLimit = theoreticalGross + limitValue
+        val theoreticalGross = clearWeight + event.packageWeight + event.trayWeight
+        val realGross = event.grossWeight
+        val limitValue = clearWeight / 100
 
-            val isCorrect = event.grossWeight in (minGrossLimit..maxGrossLimit)
-            val isLess = event.grossWeight < minGrossLimit
-            val isMore = event.grossWeight > maxGrossLimit
+        val minGrossLimit = theoreticalGross - limitValue
+        val maxGrossLimit = theoreticalGross + limitValue
 
-            savePackageWeightUseCase(boxCount = event.boxCount, packageWeight = event.packageWeight)
+        val isCorrect = event.grossWeight in (minGrossLimit..maxGrossLimit)
+        val isLess = event.grossWeight < minGrossLimit
+        val isMore = event.grossWeight > maxGrossLimit
 
-            _result.value = when {
-                isCorrect -> PalletState.Correct(
-                    clearWeight = clearWeight,
-                    theoreticalGross = theoreticalGross,
-                    limit = Limit(limitValue, minGrossLimit, maxGrossLimit),
-                    realGross = realGross,
-                    diff = event.grossWeight - theoreticalGross
-                )
-                isLess -> PalletState.Less(
-                    clearWeight = clearWeight,
-                    theoreticalGross = theoreticalGross,
-                    limit = Limit(limitValue, minGrossLimit, maxGrossLimit),
-                    realGross = realGross,
-                    diff = event.grossWeight - minGrossLimit
-                )
-                isMore -> PalletState.More(
-                    clearWeight = clearWeight,
-                    theoreticalGross = theoreticalGross,
-                    limit = Limit(limitValue, minGrossLimit, maxGrossLimit),
-                    realGross = realGross,
-                    diff = event.grossWeight - maxGrossLimit
-                )
-                else -> PalletState.InitState()
-            }
+        savePackageWeightUseCase(boxCount = event.boxCount, packageWeight = event.packageWeight)
+
+        _result.value = when {
+            isCorrect -> PalletState.Correct(
+                clearWeight = clearWeight,
+                theoreticalGross = theoreticalGross,
+                limit = Limit(limitValue, minGrossLimit, maxGrossLimit),
+                realGross = realGross,
+                diff = event.grossWeight - theoreticalGross
+            )
+            isLess -> PalletState.Less(
+                clearWeight = clearWeight,
+                theoreticalGross = theoreticalGross,
+                limit = Limit(limitValue, minGrossLimit, maxGrossLimit),
+                realGross = realGross,
+                diff = event.grossWeight - minGrossLimit
+            )
+            isMore -> PalletState.More(
+                clearWeight = clearWeight,
+                theoreticalGross = theoreticalGross,
+                limit = Limit(limitValue, minGrossLimit, maxGrossLimit),
+                realGross = realGross,
+                diff = event.grossWeight - maxGrossLimit
+            )
+            else -> PalletState.InitState()
         }
     }
 }
