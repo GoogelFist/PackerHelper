@@ -1,4 +1,4 @@
-package com.github.googelfist.packerhelper.presentation.screens.pieces
+package com.github.googelfist.packerhelper.presentation.screens.counting
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,26 +8,24 @@ import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.github.googelfist.packerhelper.R
-import com.github.googelfist.packerhelper.databinding.WeightCountingFragmentBinding
+import com.github.googelfist.packerhelper.databinding.PiecesCountingFragmentBinding
 import com.github.googelfist.packerhelper.presentation.screens.InputTextHelper.hideKeyboard
-import com.github.googelfist.packerhelper.presentation.screens.pieces.model.WeightCountingEvent
-import com.github.googelfist.packerhelper.presentation.screens.pieces.model.WeightCountingState
+import com.github.googelfist.packerhelper.presentation.screens.counting.model.PiecesCountingEvent
+import com.github.googelfist.packerhelper.presentation.screens.counting.model.PiecesCountingState
 import com.google.android.material.textfield.TextInputEditText
 
-class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
+class PiecesCountingFragment : Fragment(R.layout.pieces_counting_fragment) {
 
-    private var _binding: WeightCountingFragmentBinding? = null
-    private val binding: WeightCountingFragmentBinding
+    private var _binding: PiecesCountingFragmentBinding? = null
+    private val binding: PiecesCountingFragmentBinding
         get() = _binding!!
 
-    private val viewModel by activityViewModels<WeightCountingViewModel>()
+    private val viewModel by activityViewModels<PiecesCountingViewModel>()
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = WeightCountingFragmentBinding.inflate(inflater, container, false)
+        _binding = PiecesCountingFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -38,8 +36,8 @@ class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
 
         viewModel.result.observe(viewLifecycleOwner) { state ->
             when (state) {
-                is WeightCountingState.Counted -> setCountedState(state)
-                WeightCountingState.Init -> setInitState()
+                is PiecesCountingState.Counted -> setCountedState(state)
+                PiecesCountingState.Init -> setInitState()
             }
         }
 
@@ -66,7 +64,7 @@ class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
 
     private fun setupClearButton() {
         binding.buttonClear.setOnClickListener {
-            viewModel.obtainEvent(WeightCountingEvent.ClearFields)
+            viewModel.obtainEvent(PiecesCountingEvent.ClearFields)
         }
     }
 
@@ -74,14 +72,14 @@ class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
         binding.buttonCalculate.setOnClickListener {
 
             with(binding) {
-                validateEditText(textInputEditTextBoxPieces)
+                validateEditText(textInputEditTextBoxWeight)
                 validateEditText(textInputEditText100PcWeight)
 
-                val boxWeight = textInputEditTextBoxPieces.text.toString()
+                val boxWeight = textInputEditTextBoxWeight.text.toString()
                 val weight100pcs = textInputEditText100PcWeight.text.toString()
 
                 viewModel.obtainEvent(
-                    WeightCountingEvent.Calculate(boxWeight.toInt(), weight100pcs.toFloat())
+                    PiecesCountingEvent.Calculate(boxWeight.toFloat(), weight100pcs.toFloat())
                 )
 
                 root.hideKeyboard()
@@ -99,17 +97,16 @@ class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
         }
     }
 
-    private fun setCountedState(state: WeightCountingState.Counted) {
-        binding.tvWeightCounting.text =
-            getString(R.string.weight_counting, state.pcs, state.boxWeight)
+    private fun setCountedState(state: PiecesCountingState.Counted) {
+        binding.tvPcsCounting.text = getString(R.string.pieces_counting, state.boxWeight, state.pcs)
     }
 
     private fun setInitState() {
         with(binding) {
-            textInputEditTextBoxPieces.setText(EMPTY_STRING)
+            textInputEditTextBoxWeight.setText(EMPTY_STRING)
             textInputEditText100PcWeight.setText(EMPTY_STRING)
 
-            tvWeightCounting.text = EMPTY_STRING
+            tvPcsCounting.text = EMPTY_STRING
         }
     }
 

@@ -6,7 +6,7 @@
 
     <fragment
             android:id="@+id/weightCountingFragment"
-            android:name="com.github.googelfist.packerhelper.presentation.screens.pieces.WeightCountingFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.counting.WeightCountingFragment"
             android:label="WeightCountingFragment" />
 
 </navigation>

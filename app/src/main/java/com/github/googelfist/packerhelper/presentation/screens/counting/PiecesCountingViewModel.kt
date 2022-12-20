@@ -1,10 +1,10 @@
-package com.github.googelfist.packerhelper.presentation.screens.pieces
+package com.github.googelfist.packerhelper.presentation.screens.counting
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.github.googelfist.packerhelper.presentation.screens.EventHandler
-import com.github.googelfist.packerhelper.presentation.screens.pieces.model.PiecesCountingEvent
-import com.github.googelfist.packerhelper.presentation.screens.pieces.model.PiecesCountingState
+import com.github.googelfist.packerhelper.presentation.screens.counting.model.PiecesCountingEvent
+import com.github.googelfist.packerhelper.presentation.screens.counting.model.PiecesCountingState
 
 class PiecesCountingViewModel : ViewModel(), EventHandler<PiecesCountingEvent> {
 

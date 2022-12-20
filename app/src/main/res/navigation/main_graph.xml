@@ -26,12 +26,12 @@
 
     <fragment
             android:id="@+id/piecesCountingFragment"
-            android:name="com.github.googelfist.packerhelper.presentation.screens.pieces.PiecesCountingFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.counting.PiecesCountingFragment"
             android:label="PiecesCountingFragment" />
 
     <fragment
             android:id="@+id/weightCountingFragment"
-            android:name="com.github.googelfist.packerhelper.presentation.screens.pieces.WeightCountingFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.counting.WeightCountingFragment"
             android:label="WeightCountingFragment" />
 
 </navigation>
