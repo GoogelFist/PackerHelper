@@ -30,6 +30,8 @@ sealed class PalletState {
         val boxCount: Int = 0,
         val packageWeight: Float = 0f
     ) : PalletState()
+
+    object ClearState : PalletState()
 }
 
 data class Limit(val value: Float, val minGrossLimit: Float, val maxGrossLimit: Float)

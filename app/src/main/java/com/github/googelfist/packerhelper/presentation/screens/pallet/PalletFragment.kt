@@ -57,6 +57,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                 is PalletState.Less -> setLessState(state)
                 is PalletState.Correct -> setCorrectState(state)
                 is PalletState.More -> setMoreState(state)
+                PalletState.ClearState -> setClearState()
             }
         }
     }
@@ -70,7 +71,7 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
     }
 
     private fun validateBoxCount(boxCount: Int): String {
-       return if (boxCount == 0) {
+        return if (boxCount == 0) {
             EMPTY_STRING
         } else {
             boxCount.toString()
@@ -88,7 +89,8 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun setLessState(state: PalletState.Less) {
         with(binding) {
-            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
+            tvClearWeight.text =
+                getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
             tvTheoreticalGross.text =
                 getString(
                     R.string.theoretical_gross_message,
@@ -110,7 +112,8 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun setCorrectState(state: PalletState.Correct) {
         with(binding) {
-            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
+            tvClearWeight.text =
+                getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
             tvTheoreticalGross.text =
                 getString(
                     R.string.theoretical_gross_message,
@@ -127,7 +130,8 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
 
     private fun setMoreState(state: PalletState.More) {
         with(binding) {
-            tvClearWeight.text = getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
+            tvClearWeight.text =
+                getString(R.string.clear_weight_message, state.clearWeight, state.limit.value)
             tvTheoreticalGross.text =
                 getString(
                     R.string.theoretical_gross_message,
@@ -144,6 +148,20 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
                 )
 
             tvRealGross.setTextColor(Color.RED)
+        }
+    }
+
+    private fun setClearState() {
+        with(binding) {
+            textInputEditTextBoxWeight.setText(EMPTY_STRING)
+            textInputEditTextTrayWeight.setText(EMPTY_STRING)
+            textInputEditTextGrossWeight.setText(EMPTY_STRING)
+            textInputEditTextBoxCount.setText(EMPTY_STRING)
+            textInputEditTextPackageWeight.setText(EMPTY_STRING)
+
+            tvTheoreticalGross.text = EMPTY_STRING
+            tvClearWeight.text = EMPTY_STRING
+            tvRealGross.text = EMPTY_STRING
         }
     }
 
@@ -180,19 +198,8 @@ class PalletFragment : Fragment(R.layout.pallet_fragment) {
     }
 
     private fun setupClearButton() {
-        with(binding) {
-
-            buttonClear.setOnClickListener {
-                textInputEditTextBoxWeight.setText(EMPTY_STRING)
-                textInputEditTextTrayWeight.setText(EMPTY_STRING)
-                textInputEditTextGrossWeight.setText(EMPTY_STRING)
-                textInputEditTextBoxCount.setText(EMPTY_STRING)
-                textInputEditTextPackageWeight.setText(EMPTY_STRING)
-
-                tvTheoreticalGross.text = EMPTY_STRING
-                tvClearWeight.text = EMPTY_STRING
-                tvRealGross.text = EMPTY_STRING
-            }
+        binding.buttonClear.setOnClickListener {
+            viewModel.obtainEvent(PalletEvent.ClearFields)
         }
     }
 

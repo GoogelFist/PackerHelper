@@ -94,7 +94,7 @@ class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
         val text = editText.text.toString()
         when {
             text.isEmpty() -> editText.setText(DEFAULT_VALUE)
-            text.startsWith('.') -> editText.setText(getString(R.string.et_starts_with_dot, text))
+            text.startsWith(DOT) -> editText.setText(getString(R.string.et_starts_with_dot, text))
             !text.first().isDigit() -> editText.setText(DEFAULT_VALUE)
         }
     }
@@ -119,6 +119,7 @@ class WeightCountingFragment : Fragment(R.layout.weight_counting_fragment) {
     }
 
     companion object {
+        private const val DOT = '.'
         private const val DEFAULT_VALUE = "0"
         private const val EMPTY_STRING = ""
     }

@@ -23,7 +23,12 @@ class PalletViewModel(
         when (event) {
             is PalletEvent.LoadPallet -> loadedPallet(event.boxWeight)
             is PalletEvent.CalculateRealGross -> calculated(event)
+            PalletEvent.ClearFields -> cleared()
         }
+    }
+
+    private fun cleared() {
+        _result.value = PalletState.ClearState
     }
 
     private fun loadedPallet(boxWeight: Float) {

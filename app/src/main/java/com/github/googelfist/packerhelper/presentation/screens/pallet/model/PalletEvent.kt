@@ -10,4 +10,6 @@ sealed class PalletEvent {
     ) : PalletEvent()
 
     data class LoadPallet(val boxWeight: Float = 0f) : PalletEvent()
+
+    object ClearFields: PalletEvent()
 }
