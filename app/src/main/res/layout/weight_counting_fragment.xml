@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
     <FrameLayout
+            android:id="@+id/fl_box_pieces"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/fl_weight_100"
+            app:layout_constraintBottom_toTopOf="@id/fl_weight_100">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -39,10 +42,12 @@
     </FrameLayout>
 
     <FrameLayout
+            android:id="@+id/fl_weight_100"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -69,11 +74,21 @@
 
     </FrameLayout>
 
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline">
 
         <Button
                 android:id="@+id/button_clear"
@@ -100,6 +115,10 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/weight_counting"
-            android:textAppearance="@style/Text.MontserratMedium.14.Black" />
+            android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            app:layout_constraintStart_toStartOf="@id/ll_buttons"
+            app:layout_constraintTop_toBottomOf="@id/ll_buttons" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
