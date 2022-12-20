@@ -3,23 +3,35 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/main_graph"
         app:startDestination="@id/palletFragment">
+
     <fragment
             android:id="@+id/palletFragment"
             android:name="com.github.googelfist.packerhelper.presentation.screens.pallet.PalletFragment"
             android:label="PalletFragment" />
-    <fragment
-            android:id="@+id/piecesTabsFragment"
-            android:name="com.github.googelfist.packerhelper.presentation.PiecesTabsFragment"
-            android:label="PiecesTabsFragment" />
+
     <fragment
             android:id="@+id/tabsFragment"
             android:name="com.github.googelfist.packerhelper.presentation.TabsFragment"
-            android:label="TabsFragment" >
+            android:label="TabsFragment">
         <action
                 android:id="@+id/action_tabsFragment_to_palletFragment2"
                 app:destination="@id/palletFragment" />
         <action
-                android:id="@+id/action_tabsFragment_to_piecesTabsFragment"
-                app:destination="@id/piecesTabsFragment" />
+                android:id="@+id/action_tabsFragment_to_piecesCountingFragment"
+                app:destination="@id/piecesCountingFragment" />
+        <action
+                android:id="@+id/action_tabsFragment_to_weightCountingFragment"
+                app:destination="@id/weightCountingFragment" />
     </fragment>
+
+    <fragment
+            android:id="@+id/piecesCountingFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.pieces.PiecesCountingFragment"
+            android:label="PiecesCountingFragment" />
+
+    <fragment
+            android:id="@+id/weightCountingFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.pieces.WeightCountingFragment"
+            android:label="WeightCountingFragment" />
+
 </navigation>

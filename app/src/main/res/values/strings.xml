@@ -3,7 +3,8 @@
     <string name="app_name">Packer Helper</string>
 
     <string name="bottom_menu_pallet_title">Паллет</string>
-    <string name="bottom_menu_pieces_counting_title">Количество</string>
+    <string name="bottom_menu_pieces_counting_title">Кол-во по весу</string>
+    <string name="bottom_menu_weight_counting_title">Вес по кол-ву</string>
     <string name="box_count_hint">Кол-во коробок, шт.</string>
     <string name="box_weight_hint">Вес одной коробки, кг.</string>
     <string name="tray_weight_hint">Вес поддона, кг.</string>

@@ -6,8 +6,13 @@
             android:icon="@drawable/ic_counting_tab"
             android:title="@string/bottom_menu_pallet_title" />
     <item
-            android:id="@id/pieces_tabs"
+            android:id="@id/pieces_counting_tab"
             android:icon="@drawable/ic_counting_tab"
             android:title="@string/bottom_menu_pieces_counting_title" />
+
+    <item
+            android:id="@id/weight_counting_tab"
+            android:icon="@drawable/ic_counting_tab"
+            android:title="@string/bottom_menu_weight_counting_title" />
 
 </menu>
