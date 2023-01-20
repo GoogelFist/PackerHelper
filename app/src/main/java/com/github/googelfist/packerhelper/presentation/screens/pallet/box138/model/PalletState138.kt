@@ -1,37 +1,37 @@
-package com.github.googelfist.packerhelper.presentation.screens.pallet.model
+package com.github.googelfist.packerhelper.presentation.screens.pallet.box138.model
 
-sealed class PalletState {
+sealed class PalletState138 {
     data class Less(
         val clearWeight: Float,
         val theoreticalGross: Float,
-        val limit: Limit,
+        val limit138: Limit138,
         val realGross: Float,
         val diff: Float
-    ) : PalletState()
+    ) : PalletState138()
 
     data class Correct(
         val clearWeight: Float,
         val theoreticalGross: Float,
-        val limit: Limit,
+        val limit138: Limit138,
         val realGross: Float,
         val diff: Float
-    ) : PalletState()
+    ) : PalletState138()
 
     data class More(
         val clearWeight: Float,
         val theoreticalGross: Float,
-        val limit: Limit,
+        val limit138: Limit138,
         val realGross: Float,
         val diff: Float
-    ) : PalletState()
+    ) : PalletState138()
 
     data class InitState(
         val boxWeight: Float = 0f,
         val boxCount: Int = 0,
         val packageWeight: Float = 0f
-    ) : PalletState()
+    ) : PalletState138()
 
-    object ClearState : PalletState()
+    object ClearState : PalletState138()
 }
 
-data class Limit(val value: Float, val minGrossLimit: Float, val maxGrossLimit: Float)
+data class Limit138(val value: Float, val minGrossLimit: Float, val maxGrossLimit: Float)

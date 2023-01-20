@@ -6,7 +6,7 @@
 
     <fragment
             android:id="@+id/palletFragment"
-            android:name="com.github.googelfist.packerhelper.presentation.screens.pallet.PalletFragment"
+            android:name="com.github.googelfist.packerhelper.presentation.screens.pallet.box208.PalletFragment208"
             android:label="PalletFragment" />
 
     <fragment
