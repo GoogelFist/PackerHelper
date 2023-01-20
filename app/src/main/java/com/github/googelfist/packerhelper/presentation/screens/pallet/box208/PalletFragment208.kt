@@ -249,5 +249,9 @@ class PalletFragment208 : Fragment(R.layout.pallet_fragment_208) {
     companion object {
         private const val DEFAULT_VALUE = "0"
         private const val EMPTY_STRING = ""
+
+        fun newInstance(): PalletFragment208 {
+            return PalletFragment208()
+        }
     }
 }
