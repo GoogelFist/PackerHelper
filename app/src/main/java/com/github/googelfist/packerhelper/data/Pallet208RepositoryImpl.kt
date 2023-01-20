@@ -1,17 +1,15 @@
 package com.github.googelfist.packerhelper.data
 
 import android.content.SharedPreferences
-import com.github.googelfist.packerhelper.di.ProvideDataModule.Companion.SHARED_PREFS_208
 import com.github.googelfist.packerhelper.domain.PalletRepository
 import com.github.googelfist.packerhelper.domain.model.Pallet
 import javax.inject.Inject
-import javax.inject.Named
 
-class Pallet208RepositoryImpl @Inject constructor(@Named(SHARED_PREFS_208) private val sharedPreferences: SharedPreferences) : PalletRepository {
+class Pallet208RepositoryImpl @Inject constructor(private val sharedPreferences: SharedPreferences) : PalletRepository {
 
     override fun savePackageWeight(boxCount: Int, packageWeight: Float) {
         sharedPreferences.edit()
-            .putFloat("packageWeight208$boxCount", packageWeight)
+            .putFloat("package208Weight_$boxCount", packageWeight)
             .apply()
     }
 
@@ -31,7 +29,7 @@ class Pallet208RepositoryImpl @Inject constructor(@Named(SHARED_PREFS_208) priva
             else -> 0f
         }
 
-        val packageWeight = sharedPreferences.getFloat("packageWeight208$boxCount", defValue)
+        val packageWeight = sharedPreferences.getFloat("package208Weight_$boxCount", defValue)
 
         return Pallet(boxWeight = boxWeight, boxCount = boxCount, packageWeight = packageWeight)
     }

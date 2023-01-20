@@ -3,16 +3,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
     <FrameLayout
             android:id="@+id/fl_box_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/fl_tray_weight"
             app:layout_constraintStart_toStartOf="@id/fl_tray_weight">

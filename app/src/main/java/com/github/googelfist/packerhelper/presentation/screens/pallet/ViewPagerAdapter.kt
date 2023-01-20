@@ -2,14 +2,13 @@ package com.github.googelfist.packerhelper.presentation.screens.pallet
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.github.googelfist.packerhelper.presentation.screens.pallet.box208.PalletFragment208
 
-class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class ViewPagerAdapter(fragment: Fragment,private val list: List<Fragment>) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
-        return 3
+        return list.size
     }
 
     override fun createFragment(position: Int): Fragment {
-        return PalletFragment208.newInstance()
+        return list[position]
     }
 }
