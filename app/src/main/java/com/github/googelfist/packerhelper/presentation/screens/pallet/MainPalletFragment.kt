@@ -20,7 +20,7 @@ class MainPalletFragment : Fragment(R.layout.main_pallet_fragment) {
     private val binding: MainPalletFragmentBinding
         get() = _binding!!
 
-    private val list = listOf(
+    private val palletFragments = listOf(
         PalletFragment208.newInstance(),
         PalletFragment168.newInstance(),
         PalletFragment138.newInstance()
@@ -40,20 +40,20 @@ class MainPalletFragment : Fragment(R.layout.main_pallet_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewPagerAdapter = ViewPagerAdapter(this, list)
+        viewPagerAdapter = ViewPagerAdapter(this, palletFragments)
         viewPager = binding.palletViewpager
         tabLayout = binding.palletTabLayout
 
         viewPager.adapter = viewPagerAdapter
+        viewPager.offscreenPageLimit = 3
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
-                0 -> tab.text = TAB_LABEL_208
-                1 -> tab.text = TAB_LABEL_168
-                2 -> tab.text = TAB_LABEL_138
+                0 -> tab.text = getTabLabel(palletFragments, position)
+                1 -> tab.text = getTabLabel(palletFragments, position)
+                2 -> tab.text = getTabLabel(palletFragments, position)
             }
         }.attach()
-
     }
 
     override fun onDestroyView() {
@@ -61,9 +61,7 @@ class MainPalletFragment : Fragment(R.layout.main_pallet_fragment) {
         _binding = null
     }
 
-    companion object {
-        private const val TAB_LABEL_208 = "208"
-        private const val TAB_LABEL_168 = "168"
-        private const val TAB_LABEL_138 = "138"
+    private fun getTabLabel(palletFragments: List<Fragment>, position: Int): String {
+        return palletFragments[position].javaClass.name.takeLast(3)
     }
 }

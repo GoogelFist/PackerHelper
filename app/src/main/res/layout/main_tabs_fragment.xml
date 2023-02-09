@@ -15,7 +15,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/tabs_graph" />
+            app:navGraph="@navigation/tabs_graph"
+            tools:layout="@layout/main_pallet_fragment" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
