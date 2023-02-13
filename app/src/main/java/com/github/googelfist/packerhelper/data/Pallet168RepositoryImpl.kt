@@ -17,15 +17,13 @@ class Pallet168RepositoryImpl @Inject constructor(private val sharedPreferences:
         val boxCount = when {
             boxWeight == 0f -> 0
             boxWeight <= 16f -> 60
-            boxWeight > 16f && boxWeight < 19 -> 48
-            boxWeight >= 19f -> 36
+            boxWeight > 16f -> 48
             else -> 0
         }
 
         val defValue = when (boxCount) {
-            36 -> PACKAGE_WEIGHT_36
-            48 -> PACKAGE_WEIGHT_48
             60 -> PACKAGE_WEIGHT_60
+            48 -> PACKAGE_WEIGHT_48
             else -> 0f
         }
 
@@ -35,8 +33,7 @@ class Pallet168RepositoryImpl @Inject constructor(private val sharedPreferences:
     }
 
     companion object {
-        private const val PACKAGE_WEIGHT_36 = 13f
-        private const val PACKAGE_WEIGHT_48 = 17f
-        private const val PACKAGE_WEIGHT_60 = 21f
+        private const val PACKAGE_WEIGHT_60 = 19.2f
+        private const val PACKAGE_WEIGHT_48 = 15.56f
     }
 }

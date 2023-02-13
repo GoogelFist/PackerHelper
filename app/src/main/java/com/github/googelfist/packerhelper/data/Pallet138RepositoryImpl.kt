@@ -16,14 +16,12 @@ class Pallet138RepositoryImpl @Inject constructor(private val sharedPreferences:
     override fun loadPallet(boxWeight: Float): Pallet {
         val boxCount = when {
             boxWeight == 0f -> 0
-            boxWeight <= 16f -> 60
-            boxWeight > 16f && boxWeight < 19 -> 48
-            boxWeight >= 19f -> 36
+            boxWeight <= 14f -> 60
+            boxWeight > 14f -> 48
             else -> 0
         }
 
         val defValue = when (boxCount) {
-            36 -> PACKAGE_WEIGHT_36
             48 -> PACKAGE_WEIGHT_48
             60 -> PACKAGE_WEIGHT_60
             else -> 0f
@@ -35,8 +33,7 @@ class Pallet138RepositoryImpl @Inject constructor(private val sharedPreferences:
     }
 
     companion object {
-        private const val PACKAGE_WEIGHT_36 = 13f
-        private const val PACKAGE_WEIGHT_48 = 17f
-        private const val PACKAGE_WEIGHT_60 = 21f
+        private const val PACKAGE_WEIGHT_48 = 14.6f
+        private const val PACKAGE_WEIGHT_60 = 18f
     }
 }
