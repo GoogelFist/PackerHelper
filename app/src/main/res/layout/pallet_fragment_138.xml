@@ -10,12 +10,11 @@
             android:id="@+id/fl_box_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/fl_tray_weight"
-            app:layout_constraintStart_toStartOf="@id/fl_tray_weight">
+            app:layout_constraintStart_toStartOf="@id/fl_tray_weight"
+            app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -23,7 +22,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/box_weight_hint"
-                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -36,6 +34,8 @@
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
+                    android:nextFocusForward="@id/text_input_edit_text_tray_weight"
+                    android:paddingBottom="2dp"
                     android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -48,7 +48,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/fl_gross_weight"
-            app:layout_constraintStart_toStartOf="@id/fl_gross_weight">
+            app:layout_constraintStart_toStartOf="@id/fl_gross_weight"
+            app:layout_constraintTop_toBottomOf="@id/fl_box_weight">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -56,7 +57,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/tray_weight_hint"
-                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -69,6 +69,8 @@
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
+                    android:nextFocusForward="@id/text_input_edit_text_gross_weight"
+                    android:paddingBottom="2dp"
                     android:singleLine="true"
                     tools:text="" />
 
@@ -82,7 +84,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/fl_box_count"
-            app:layout_constraintStart_toStartOf="@id/fl_box_count">
+            app:layout_constraintStart_toStartOf="@id/fl_box_count"
+            app:layout_constraintTop_toBottomOf="@id/fl_tray_weight">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -90,7 +93,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/gross_weight_hint"
-                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -103,6 +105,8 @@
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
+                    android:nextFocusForward="@id/text_input_edit_text_box_count"
+                    android:paddingBottom="2dp"
                     android:singleLine="true"
                     tools:text="" />
 
@@ -116,7 +120,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/fl_package_weight"
-            app:layout_constraintStart_toStartOf="@id/fl_package_weight">
+            app:layout_constraintStart_toStartOf="@id/fl_package_weight"
+            app:layout_constraintTop_toBottomOf="@id/fl_gross_weight">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -124,7 +129,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/box_count_hint"
-                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -137,6 +141,8 @@
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
+                    android:nextFocusForward="@id/text_input_edit_text_package_weight"
+                    android:paddingBottom="2dp"
                     android:singleLine="true"
                     tools:text="" />
 
@@ -148,10 +154,10 @@
             android:id="@+id/fl_package_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/guideline"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintBottom_toTopOf="@id/ll_buttons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_box_count">
 
         <com.google.android.material.textfield.TextInputLayout
                 style="@style/DefaultTextInputLayout"
@@ -159,7 +165,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/package_weight"
-                android:paddingVertical="4dp"
                 app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -173,6 +178,7 @@
                     android:lines="1"
                     android:maxLength="255"
                     android:maxLines="1"
+                    android:paddingBottom="2dp"
                     android:singleLine="true"
                     tools:text="" />
 
@@ -219,8 +225,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
             android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            app:layout_constraintBottom_toTopOf="@id/tv_theoretical_gross"
             app:layout_constraintStart_toStartOf="@id/ll_buttons"
             app:layout_constraintTop_toBottomOf="@id/ll_buttons"
             tools:text="Нетто" />
@@ -230,8 +236,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="8dp"
             android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            app:layout_constraintBottom_toTopOf="@id/tv_real_gross"
             app:layout_constraintStart_toStartOf="@id/ll_buttons"
             app:layout_constraintTop_toBottomOf="@id/tv_clear_weight"
             tools:text="Теор. брутто" />
@@ -241,8 +247,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:textAppearance="@style/Text.MontserratMedium.14.Black"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/ll_buttons"
             app:layout_constraintTop_toBottomOf="@id/tv_theoretical_gross"
             tools:text="Факт. брутто" />
