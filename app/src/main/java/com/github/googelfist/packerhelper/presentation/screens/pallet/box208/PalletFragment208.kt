@@ -106,7 +106,7 @@ class PalletFragment208 : Fragment(R.layout.pallet_fragment_208) {
                     state.diff
                 )
 
-            tvRealGross.setTextColor(Color.RED)
+            tvRealGross.setTextColor(resources.getColor(R.color.error_result_color, resources.newTheme()))
         }
     }
 
@@ -124,7 +124,7 @@ class PalletFragment208 : Fragment(R.layout.pallet_fragment_208) {
             tvRealGross.text =
                 getString(R.string.correct_real_gross_message, state.realGross, state.diff)
 
-            tvRealGross.setTextColor(Color.BLUE)
+            tvRealGross.setTextColor(resources.getColor(R.color.valid_result_color, resources.newTheme()))
         }
     }
 
@@ -147,7 +147,7 @@ class PalletFragment208 : Fragment(R.layout.pallet_fragment_208) {
                     state.diff
                 )
 
-            tvRealGross.setTextColor(Color.RED)
+            tvRealGross.setTextColor(resources.getColor(R.color.error_result_color, resources.newTheme()))
         }
     }
 

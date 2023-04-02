@@ -7,8 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#0000FF</color>
-    <color name="red">#FF0000</color>
 
     <color name="transparent">#00000000</color>
 
@@ -28,15 +26,15 @@
     <color name="edit_text_error_text_color">@color/torch_red</color>
 
     <!--  tabs bottom menu  -->
-    <color name="checked_item_color">@color/black</color>
-    <color name="unchecked_item_color">@color/silver_chalice</color>
+    <color name="checked_item_color">@color/white</color>
+    <color name="unchecked_item_color">@color/silver_chalice_50</color>
 
-    <color name="text_input_background_color">@color/wild_sand</color>
+    <color name="text_input_background_color">@color/ebony_clay</color>
 
     <color name="bottom_stroke_focused_color">@color/alto</color>
     <color name="bottom_stroke_un_focused_color">@color/alto</color>
 
-    <color name="main_info_color">@color/black</color>
+    <color name="main_info_color">@color/white</color>
     <color name="error_result_color">@color/red</color>
-    <color name="valid_result_color">@color/blue</color>
+    <color name="valid_result_color">@color/dodger_blue</color>
 </resources>
