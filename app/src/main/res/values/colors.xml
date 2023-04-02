@@ -30,6 +30,7 @@
     <!--  tabs bottom menu  -->
     <color name="checked_item_color">@color/black</color>
     <color name="unchecked_item_color">@color/silver_chalice</color>
+    <color name="bottom_nav_view_background">@color/white</color>
 
     <color name="text_input_background_color">@color/wild_sand</color>
 

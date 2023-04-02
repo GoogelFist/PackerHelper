@@ -28,6 +28,7 @@
     <!--  tabs bottom menu  -->
     <color name="checked_item_color">@color/white</color>
     <color name="unchecked_item_color">@color/silver_chalice_50</color>
+    <color name="bottom_nav_view_background">@color/ebony_clay</color>
 
     <color name="text_input_background_color">@color/ebony_clay</color>
 
